@@ -40,8 +40,10 @@ SOONG_CONFIG_MOTOROLA_SM7250_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_kiev
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := vendor/kiev_defconfig
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC_EXT=$(shell pwd)/$(DEVICE_PATH)/dtc/dtc \
-    DTC_OVERLAY_TEST_EXT=$(shell pwd)/$(DEVICE_PATH)/dtc/ufdt_apply_overlay
+    DTC_PREBUILT=true \
+    DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
+    DTC_OVERLAY_TEST_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/ufdt_apply_overlay \
+    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 
 # Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
