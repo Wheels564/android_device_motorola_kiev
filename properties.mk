@@ -228,6 +228,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_display_power_timer_ms=1000
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     ro.sf.blurs_are_expensive=1 \
     debug.sf.enable_hwc_vds=1
 
