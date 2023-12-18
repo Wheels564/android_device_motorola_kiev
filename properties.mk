@@ -141,6 +141,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # CNE
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.cne.feature=1
 
 # CoreSight STM
