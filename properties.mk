@@ -412,15 +412,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 #initialize QCA1530 detection
     sys.qca1530=detect
 
-#Enable stm events
-    persist.debug.coresight.config=stm-events
-
-#Bringup properties
-    persist.sys.force_sw_gles=1
-    persist.vendor.radio.atfwd.start=true
-    ro.kernel.qemu.gles=0
-    qemu.hw.mainkeys=0
-
 ###END OF NEW VERIZON STUFF###
 
 # RmNet Data
