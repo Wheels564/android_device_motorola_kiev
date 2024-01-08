@@ -403,7 +403,19 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.rild.nitz_short_ons_1= \
     persist.rild.nitz_short_ons_2= \
     persist.rild.nitz_short_ons_3= \
-    ril.subscription.types=SIM
+    ril.subscription.types=NV,RUIM
+# system props for the data modules
+#
+    ro.vendor.use_data_netmgrd=true
+    persist.vendor.data.mode=concurrent
+
+#initialize QCA1530 detection
+    sys.qca1530=detect
+
+#Enable stm events
+    persist.debug.coresight.config=stm-events
+
+###END OF NEW VERIZON STUFF###
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
