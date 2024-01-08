@@ -386,23 +386,23 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
     persist.vendor.data.mode=concurrent \
     #ril.subscription.types=RUIM \
-# Set network mode to (NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA, NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA) for 8+8 mode device on DSDS mode
+    #Set network mode to (NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA, NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA) for 8+8 mode device on DSDS mode
     ro.telephony.default_network=33,33 \
     ro.vendor.use_data_netmgrd=true \
-    telephony.lteOnCdmaDevice=1,1
+    telephony.lteOnCdmaDevice=1
 
 # Try some stock Verison stuff
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     #rild.libargs=-d /dev/smd0
-    persist.rild.nitz_plmn=
-    persist.rild.nitz_long_ons_0=
-    persist.rild.nitz_long_ons_1=
-    persist.rild.nitz_long_ons_2=
-    persist.rild.nitz_long_ons_3=
-    persist.rild.nitz_short_ons_0=
-    persist.rild.nitz_short_ons_1=
-    persist.rild.nitz_short_ons_2=
-    persist.rild.nitz_short_ons_3=
+    persist.rild.nitz_plmn= \
+    persist.rild.nitz_long_ons_0= \
+    persist.rild.nitz_long_ons_1= \
+    persist.rild.nitz_long_ons_2= \
+    persist.rild.nitz_long_ons_3= \
+    persist.rild.nitz_short_ons_0= \
+    persist.rild.nitz_short_ons_1= \
+    persist.rild.nitz_short_ons_2= \
+    persist.rild.nitz_short_ons_3= \
     ril.subscription.types=NV,RUIM
 
 # RmNet Data
