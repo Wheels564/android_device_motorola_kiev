@@ -403,7 +403,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.rild.nitz_short_ons_1= \
     persist.rild.nitz_short_ons_2= \
     persist.rild.nitz_short_ons_3= \
-    ril.subscription.types=NV,RUIM
+    ril.subscription.types=SIM
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
