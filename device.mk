@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/kiev/kiev-vendor.mk)
+
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -38,18 +38,6 @@ PRODUCT_PACKAGES += \
     AvoidAppsInCutoutOverlay
 
 # A/B
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    product \
-    recovery \
-    system \
-    vendor \
-    vbmeta \
-    vbmeta_system
-
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -67,9 +55,6 @@ PRODUCT_PACKAGES += \
     e2fsck_ramdisk \
     tune2fs_ramdisk \
     resize2fs_ramdisk
-
-# Properties
--include $(LOCAL_PATH)/properties.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -116,17 +101,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
-# Atrace
-PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0-service
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.soundtrigger@2.2-impl \
     android.hardware.bluetooth.audio-impl \
+    android.hardware.soundtrigger@2.3-impl \
     audio.bluetooth.default \
     audio.primary.lito \
     audio.r_submix.default \
@@ -141,7 +122,8 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix \
     libtinycompress \
-    libgui_vendor
+    libgui_vendor \
+    sound_trigger.primary.lito
 
 # audio.primary.lito shim
 PRODUCT_PACKAGES += \
@@ -199,7 +181,8 @@ PRODUCT_PACKAGES += \
     libxml2 \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
-    android.frameworks.displayservice@1.0.vendor
+    android.frameworks.displayservice@1.0.vendor \
+    MotCamera3Target
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -301,6 +284,10 @@ PRODUCT_BOOT_JARS += qcom.fmradio
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Freeform Multiwindow
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
@@ -358,10 +345,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.kiev
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -470,12 +453,6 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.va_aosp.support=1
-
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.qti.va_odm.support=1
 
 # RIL
 PRODUCT_PACKAGES += \
