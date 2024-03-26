@@ -404,14 +404,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.aware.interface=wifi-aware0
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    DEVICE_PROVISIONED=1 \
-    persist.sys.fflag.override.settings_provider_model=false \
-    persist.vendor.data.mode=concurrent \
-    ril.subscription.types=RUIM \
-    ro.telephony.default_network=27,10 \
-    ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1,1
-
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+    persist.sys.fflag.override.settings_provider_model=false
+    persist.vendor.data.mode=concurrent
+    persist.rild.nitz_plmn=
+    persist.rild.nitz_long_ons_0=
+    persist.rild.nitz_long_ons_1=
+    persist.rild.nitz_long_ons_2=
+    persist.rild.nitz_long_ons_3=
+    persist.rild.nitz_short_ons_0=
+    persist.rild.nitz_short_ons_1=
+    persist.rild.nitz_short_ons_2=
+    persist.rild.nitz_short_ons_3=
+    ril.subscription.types=NV,RUIM
+    DEVICE_PROVISIONED=1
+    ro.telephony.default_network=33,33
+    ro.vendor.use_data_netmgrd=true \
+    
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.rmnet.data.enable=true \
