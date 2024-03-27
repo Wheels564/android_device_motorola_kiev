@@ -3,8 +3,8 @@
 To prevent MicroG from being installed remomve
 these lines from lineage_kiev.mk
 
- 1 Inherit some common PARTNER_GMS stuff.
+ 1: Inherit some common PARTNER_GMS stuff.
  
- 2 $(call inherit-product, vendor/partner_gms/products/gms.mk)
+ 2: $(call inherit-product, vendor/partner_gms/products/gms.mk)
 
 
