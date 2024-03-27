@@ -7,4 +7,6 @@ these lines from lineage_kiev.mk
  
  2: $(call inherit-product, vendor/partner_gms/products/gms.mk)
 
+ Thanks go out to the MicroG team for all their hard work.
+
 
