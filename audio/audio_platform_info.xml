@@ -47,6 +47,8 @@
         <usecase name="USECASE_AUDIO_RECORD_AFE_PROXY" type="in" id="6"/>
         <usecase name="USECASE_AUDIO_RECORD_LOW_LATENCY" type="in" id="13" />
         <usecase name="USECASE_AUDIO_PLAYBACK_ULL" type="out" id="13" />
+	<usecase name="USECASE_AUDIO_PLAYBACK_VOIP" type="out" id="12" />
+        <usecase name="USECASE_AUDIO_RECORD_VOIP" type="in" id="12" />    
         <usecase name="USECASE_AUDIO_HFP_SCO" type="in" id="12" />
         <usecase name="USECASE_AUDIO_HFP_SCO_WB" type="in" id="12" />
         <usecase name="USECASE_AUDIO_PLAYBACK_MMAP" type="out" id="29" />
