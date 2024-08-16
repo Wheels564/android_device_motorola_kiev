@@ -26,6 +26,9 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
+# GMS
+WITH_GMS := true
+
 # ODM
 ODM_MANIFEST_SKUS := \
     dn \

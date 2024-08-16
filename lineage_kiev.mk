@@ -24,6 +24,9 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
+# Inherit some common PARTNER_GMS stuff.
+$(call inherit-product, vendor/partner_gms/products/gms.mk)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
