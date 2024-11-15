@@ -1,4 +1,4 @@
-# Device configuration for Motorola One 5g Ace
+# Device configuration for Moto G 5G/One 5G Ace
 
 ## Device specifications
 
