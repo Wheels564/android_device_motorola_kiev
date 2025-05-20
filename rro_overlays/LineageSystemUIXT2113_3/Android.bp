@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "LineageSystemUIXT2113_3",
+    product_specific: true,
+}

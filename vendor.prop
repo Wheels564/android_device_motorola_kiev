@@ -19,10 +19,6 @@ persist.vendor.camera.privapp.list=com.motorola.camera3
 ro.soc.manufacturer=QTI
 ro.soc.model=SM7225
 
-# Dalvik
-dalvik.vm.heapgrowthlimit=192m
-dalvik.vm.heapsize=512m
-
 # Firmware
 ro.vendor.hw.modem_version=.
 
@@ -46,6 +42,7 @@ media.recorder.show_manufacturer_and_model=true
 vendor.mm.en.sec.smoothstreaming=false
 
 # Sensors
+persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.hal_trigger_ssr=false
 persist.vendor.sensors.odl.adsp=true
 ro.vendor.hw.thermal_skin_val=battery

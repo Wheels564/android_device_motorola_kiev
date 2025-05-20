@@ -1,6 +1,6 @@
 #!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# SPDX-FileCopyrightText: 2024 The LineageOS Project
+# SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -17,13 +17,12 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'hardware/motorola',
     'vendor/motorola/sm7250-common',
     'vendor/qcom/opensource/display',
 ]
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/bin/charge_only_mode': blob_fixup()
-        .add_needed('libmemset_shim.so'),
     'vendor/lib/hw/audio.primary.lito-moto.so': blob_fixup()
         .replace_needed('android.hardware.power-V1-ndk_platform.so', 'android.hardware.power-V1-ndk.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),
@@ -33,6 +32,8 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'camera.mot.is.coming.cts', b'vendor.camera.coming.cts'),
     'vendor/lib64/libvidhance.so': blob_fixup()
         .add_needed('libcomparetf2_shim.so'),
+    'vendor/lib64/sensors.moto.so': blob_fixup()
+        .add_needed('libbase_shim.so'),
     ('vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so', 'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.bitra.so'): blob_fixup()
         .sig_replace('CC 0A 00 94', '1F 20 03 D5'),
 }  # fmt: skip
