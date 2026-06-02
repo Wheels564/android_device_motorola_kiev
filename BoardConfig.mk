@@ -8,9 +8,6 @@ include device/motorola/sm7250-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/kiev
 
-# Kernel
-TARGET_KERNEL_CONFIG := vendor/kiev_defconfig vendor/debugfs.config
-
 # Audio
 AUDIO_FEATURE_ENABLED_A2DP_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
@@ -42,7 +39,7 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Copy to recovery
-BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := \
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := \
     utags \
     mmi_annotate \
     mmi_info \
@@ -52,15 +49,13 @@ BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := \
     wl2864c \
     qpnp-smbcharger-mmi \
     mcDrvModule \
-    exfat \
-    aw8624 \
     sensors_class \
     mmi_relay \
     sx933x_sar \
     touchscreen_mmi \
     focaltech_0flash_mmi
 
-RECOVERY_KERNEL_MODULES := $(addsuffix .ko,$(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD))
+RECOVERY_KERNEL_MODULES := $(addsuffix .ko,$(BOARD_RECOVERY_KERNEL_MODULES_LOAD))
 
 # Security
 VENDOR_SECURITY_PATCH := 2023-03-01
