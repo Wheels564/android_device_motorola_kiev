@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
 	
 # CARRIER CONFIG FOR U.S. MOBILE
 PRODUCT_COPY_FILES += \
-    device/motorola/fogo/carrier_config/carrier_config_carrierid_2641.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierConfig/carrier_config_carrierid_2641.xml
+    device/motorola/kiev/carrier_config/carrier_config_carrierid_2641.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierConfig/carrier_config_carrierid_2641.xml   
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
