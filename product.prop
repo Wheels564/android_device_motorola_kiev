@@ -1,4 +1,2 @@
 # Cutout
 ro.support_hide_display_cutout=true
-# Add to device/motorola/kiev/system_ext.prop
-ro.crdroid.supports_xyz=true   
