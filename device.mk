@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.crdroid.maintainer=Wheels564   
+    ro.lineage.maintainer=Wheels564  
 
 # Media
 PRODUCT_COPY_FILES += \
