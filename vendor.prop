@@ -31,9 +31,6 @@ persist.sys.sf.color_mode=0
 # HDR
 ro.vendor.display.hdr.config=/vendor/etc/hdr_tm_config.xml
 
-# Maintainer
-ro.crdroid.maintainer=Wheels564
-
 # Media
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
