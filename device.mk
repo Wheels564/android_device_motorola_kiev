@@ -40,10 +40,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-	
-# CARRIER CONFIG FOR U.S. MOBILE
-PRODUCT_COPY_FILES += \
-    device/motorola/kiev/carrier_config/carrier_config_carrierid_2641.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierConfig/carrier_config_carrierid_2641.xml   
 
 # Barometer
 PRODUCT_COPY_FILES += \
